@@ -11,7 +11,10 @@ def navigate(urlpath):
     try:
         webFile = request.urlopen(urlpath).read();
         global url;
-        url = urlpath;
+        if "github" not in url:
+            url = urlpath;
+        else:
+            url = "PyNetwork";
         infile = open("page.txt","wb");
         infile.write(webFile);
         infile.close();
@@ -27,7 +30,7 @@ def display():
     system("cls");
     infile = open("page.txt","r");
     data = infile.read();
-    print("PyWeb v1.0      (C) Michael Wang      URL: "+url);
+    print("PyWeb v1.0      (C) Michael Wang      URL: "+url+"\n");
     print(data);
     infile.close();
 
