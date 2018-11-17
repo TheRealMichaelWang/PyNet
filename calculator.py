@@ -162,13 +162,20 @@ def addfunctions():
   addbutton(40,-90,20,20,"?");
 
 def drawhelp():
-  infile = open("help.txt","r");
-  tur = turtle.Turtle();
-  tur.setx(-300);
-  tur.sety(0);
-  tur.clear();
-  tur.write(infile.read(),font=("Arial",11));
-  infile.close();
+  try:
+      infile = open("help.txt","r");
+      tur = turtle.Turtle();
+      tur.setx(-300);
+      tur.sety(0);
+      tur.clear();
+      tur.write(infile.read(),font=("Arial",11));
+      infile.close();
+  except:
+      tur = turtle.Turtle();
+      tur.setx(-300);
+      tur.sety(0);
+      tur.clear();
+      tur.write("How'd you like calculator from PyNet",font=("Arial",11));
   
 def update():
   tur = turtle.Turtle();
@@ -184,3 +191,5 @@ addfunctions();
 print("Calculator 1.0");
 print("(C) Michael Wang")
 print("The help guide is on the turtle window. For desired graphics quality, please don't resize the window");
+while True:
+    update();
