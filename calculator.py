@@ -184,5 +184,3 @@ addfunctions();
 print("Calculator 1.0");
 print("(C) Michael Wang")
 print("The help guide is on the turtle window. For desired graphics quality, please don't resize the window");
-while True:
-  update();
