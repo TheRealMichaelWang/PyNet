@@ -179,7 +179,7 @@ def drawhelp():
   
 def update():
   tur = turtle.Turtle();
-  tur.setx(100);
+  tur.setx(0);
   tur.sety(0);
   tur.clear();
 
